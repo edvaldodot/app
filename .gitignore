@@ -1,0 +1,8 @@
+# Node modules
+/node_modules/
+package.json
+package-lock.json
+yarn.lock
+site.zip
+README.md
+server.js
